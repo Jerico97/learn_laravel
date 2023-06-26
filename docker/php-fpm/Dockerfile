@@ -23,7 +23,7 @@ COPY --from=php_extension_installer /usr/bin/install-php-extensions /usr/local/b
 # persistent / runtime deps
 RUN apt-get update \
     && apt-get install -y gnupg gosu vim curl ca-certificates zip unzip git  \
-    supervisor libcap2-bin libpng-dev python2 wget libpq-dev iproute2 findutils vim lsb-release\
+    supervisor libcap2-bin libpng-dev python3 wget libpq-dev iproute2 findutils vim lsb-release\
     && curl -sLS https://deb.nodesource.com/setup_18.x | bash - \
     && apt-get install -y nodejs \
     && npm install -g npm \

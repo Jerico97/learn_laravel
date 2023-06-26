@@ -1,12 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Shops\Application\Http\Controllers\ShopController;
 
 Route::middleware(['web', 'auth'])->group(function () {
-    Route::get('/shops/', function () {
-        return inertia('Shops/Index');
-    });
-    Route::get('/shops/shop/', function () {
-        return inertia('Shop/Show');
-    });
+    Route::resource('/shops', ShopController::class)->where(['shop' => '\d+']);
 });

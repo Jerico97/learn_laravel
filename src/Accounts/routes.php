@@ -15,5 +15,8 @@ Route::middleware('web')->group(function () {
 
         // Пользователи
         Route::resource('users', UserController::class)->where(['user' => '\d+']);
+
+        //Магазины
+        //Route::resource('shops', ShopController::class)->where(['shop' => '\d+']);
     });
 });
